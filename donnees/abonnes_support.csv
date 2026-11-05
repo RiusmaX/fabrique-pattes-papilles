@@ -1,0 +1,21 @@
+email,customer_id,first_name,pet_name,pet_species,plan,sensitivity,last_order_date,next_delivery,segment,churn_risk_pct,main_signal
+damien.9048@exemple.fr,PP-019048,Damien,Filou,chien,achat ponctuel,aucune,2026-03-09,,En sommeil,99,3 contacts au service client en 12 mois
+kevin.0405@exemple.fr,PP-020405,Kevin,Chouquette,chat,achat ponctuel,aucune,2026-04-08,,En sommeil,98,une seule commande
+marie.9280@exemple.fr,PP-019280,Marie,Ozzy,chien,achat ponctuel,aucune,2026-05-01,,En sommeil,98,commandes qui s'espacent
+sandrine.6706@exemple.fr,PP-016706,Sandrine,Mimi,chat,achat ponctuel,aucune,2026-01-05,,En sommeil,97,aucune commande depuis 176 jours
+jerome.9573@exemple.fr,PP-019573,Jérôme,Uggo,chien,achat ponctuel,aucune,2026-05-20,,En sommeil,88,un retard ou une réclamation récente
+emma.1712@exemple.fr,PP-021712,Emma,Chouquette,chat,achat ponctuel,aucune,2026-06-14,,Nouveaux ou occasionnels récents,88,une seule commande
+morgane.1953@exemple.fr,PP-021953,Morgane,Volt,chien,abonnement,aucune,2026-06-20,2026-11-24,Nouveaux ou occasionnels récents,86,une seule commande
+caroline.7626@exemple.fr,PP-017626,Caroline,Mimi,chat,abonnement,aucune,2026-05-22,2026-11-06,À risque (bons clients qui s'éloignent),85,4 contacts au service client en 12 mois
+caroline.1977@exemple.fr,PP-021977,Caroline,Praline,chien,abonnement,aucune,2026-06-20,2026-11-09,Nouveaux ou occasionnels récents,84,une seule commande
+guillaume.1842@exemple.fr,PP-021842,Guillaume,Prune,chat,achat ponctuel,aucune,2026-06-17,,Nouveaux ou occasionnels récents,83,une seule commande
+chloe.1311@exemple.fr,PP-021311,Chloé,Lola,chien,achat ponctuel,peau,2026-05-26,,En sommeil,81,4 contacts au service client en 12 mois
+paul.2566@exemple.fr,PP-012566,Paul,Milo,chat,abonnement,peau,2026-05-26,2026-11-18,À risque (bons clients qui s'éloignent),76,commandes qui s'espacent
+elsa.7578@exemple.fr,PP-017578,Elsa,Tonka,chat,achat ponctuel,surpoids,2026-04-12,,En sommeil,76,commandes qui s'espacent
+aurelie.3744@exemple.fr,PP-013744,Aurélie,Ulysse,chien,achat ponctuel,aucune,2026-05-11,,À risque (bons clients qui s'éloignent),73,un retard ou une réclamation récente
+raphael.5818@exemple.fr,PP-015818,Raphaël,Indie,chat,abonnement,aucune,2026-06-27,2026-11-06,Champions,72,3 livraisons en retard en 12 mois
+nathan.6145@exemple.fr,PP-016145,Nathan,Tofu,chat,abonnement,aucune,2026-06-05,2026-11-09,Fidèles,69,un retard ou une réclamation récente
+yann.5069@exemple.fr,PP-015069,Yann,Tofu,chat,abonnement,aucune,2026-06-07,2026-11-12,Fidèles,67,commandes qui s'espacent
+laurent.5094@exemple.fr,PP-015094,Laurent,Opale,chat,abonnement,aucune,2026-06-26,2026-11-15,Fidèles,66,2 livraisons en retard en 12 mois
+adrien.1401@exemple.fr,PP-011401,Adrien,Vanille,chat,abonnement,aucune,2026-06-26,2026-11-18,Champions,65,ouvre peu les e-mails (18 %)
+sarah.8012@exemple.fr,PP-018012,Sarah,Whisky,chat,abonnement,aucune,2026-05-18,2026-11-21,À risque (bons clients qui s'éloignent),58,un retard ou une réclamation récente

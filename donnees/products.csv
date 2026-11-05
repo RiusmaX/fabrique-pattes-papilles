@@ -1,0 +1,41 @@
+product_id,name,species,category,recipe,life_stage,pack_size,pack_kg,price_eur,subscription_eligible,launch_date
+P001,Croquettes Chien Adulte Poulet 4 kg,dog,kibble,chicken,adult,4 kg,4,31.90,yes,2021-04-06
+P002,Croquettes Chien Adulte Poulet 12 kg,dog,kibble,chicken,adult,12 kg,12,74.90,yes,2021-04-06
+P003,Croquettes Chien Adulte Canard sans céréales 4 kg,dog,kibble,duck,adult,4 kg,4,33.90,yes,2021-09-13
+P004,Croquettes Chien Adulte Canard sans céréales 12 kg,dog,kibble,duck,adult,12 kg,12,79.90,yes,2021-09-13
+P005,Croquettes Chien Saumon Ventre sensible 4 kg,dog,kibble,salmon,adult,4 kg,4,34.90,yes,2022-03-07
+P006,Croquettes Chien Saumon Ventre sensible 12 kg,dog,kibble,salmon,adult,12 kg,12,82.90,yes,2022-03-07
+P007,Croquettes Chiot Poulet 4 kg,dog,kibble,chicken,puppy,4 kg,4,33.90,yes,2021-04-06
+P008,Croquettes Chiot Poulet 12 kg,dog,kibble,chicken,puppy,12 kg,12,78.90,yes,2021-04-06
+P009,Croquettes Chien Senior Dinde 4 kg,dog,kibble,turkey,senior,4 kg,4,32.90,yes,2022-03-07
+P010,Croquettes Chien Senior Dinde 12 kg,dog,kibble,turkey,senior,12 kg,12,76.90,yes,2022-03-07
+P011,Croquettes Chien Light Poulet 4 kg,dog,kibble,chicken,adult,4 kg,4,32.90,yes,2022-10-03
+P012,Croquettes Chien Light Poulet 12 kg,dog,kibble,chicken,adult,12 kg,12,76.90,yes,2022-10-03
+P013,Croquettes Chien Petite race Poulet 2 kg,dog,kibble,chicken,adult,2 kg,2,18.90,yes,2021-04-06
+P014,Croquettes Chien Petite race Poulet 4 kg,dog,kibble,chicken,adult,4 kg,4,33.90,yes,2021-04-06
+P015,Pâtée Chien Bœuf carottes 6 × 400 g,dog,wet,beef,adult,6 × 400 g,2.4,21.90,yes,2021-11-08
+P016,Pâtée Chien Poulet riz 6 × 400 g,dog,wet,chicken,adult,6 × 400 g,2.4,20.90,yes,2021-11-08
+P017,Pâtée Chien Agneau légumes 6 × 400 g,dog,wet,lamb,adult,6 × 400 g,2.4,25.90,yes,2023-04-03
+P018,Friandises Chien Bouchées canard 200 g,dog,treat,duck,all,200 g,0.2,9.90,no,2021-04-06
+P019,Os à mâcher naturels × 4,dog,treat,beef,all,× 4,0.3,10.90,no,2022-06-13
+P020,Bâtonnets dentaires Chien × 14,dog,treat,chicken,all,× 14,0.35,13.90,no,2023-09-04
+P021,Huile de saumon 250 ml,both,supplement,salmon,all,250 ml,,16.90,no,2022-06-13
+P022,Complément articulations Chien 90 comprimés,dog,supplement,,senior,90 comprimés,,28.90,no,2024-02-05
+P023,"Croquettes Chat Stérilisé Poulet 1,5 kg",cat,kibble,chicken,adult,"1,5 kg",1.5,19.90,yes,2021-04-06
+P024,Croquettes Chat Stérilisé Poulet 3 kg,cat,kibble,chicken,adult,3 kg,3,33.90,yes,2021-04-06
+P025,Croquettes Chat Stérilisé Poulet 7 kg,cat,kibble,chicken,adult,7 kg,7,68.90,yes,2022-10-03
+P026,"Croquettes Chat Adulte Saumon 1,5 kg",cat,kibble,salmon,adult,"1,5 kg",1.5,20.90,yes,2021-04-06
+P027,Croquettes Chat Adulte Saumon 3 kg,cat,kibble,salmon,adult,3 kg,3,35.90,yes,2021-04-06
+P028,"Croquettes Chat Ventre sensible Dinde 1,5 kg",cat,kibble,turkey,adult,"1,5 kg",1.5,20.90,yes,2022-03-07
+P029,Croquettes Chat Ventre sensible Dinde 3 kg,cat,kibble,turkey,adult,3 kg,3,35.90,yes,2022-03-07
+P030,"Croquettes Chaton Poulet 1,5 kg",cat,kibble,chicken,kitten,"1,5 kg",1.5,20.90,yes,2021-04-06
+P031,"Croquettes Chat Senior Canard 1,5 kg",cat,kibble,duck,senior,"1,5 kg",1.5,20.90,yes,2022-03-07
+P032,Croquettes Chat Senior Canard 3 kg,cat,kibble,duck,senior,3 kg,3,35.90,yes,2022-03-07
+P033,Sachets fraîcheur Chat Poulet 12 × 85 g,cat,wet,chicken,adult,12 × 85 g,1.02,14.90,yes,2021-11-08
+P034,Sachets fraîcheur Chat Saumon 12 × 85 g,cat,wet,salmon,adult,12 × 85 g,1.02,15.90,yes,2021-11-08
+P035,Mousse Chat Thon 12 × 85 g,cat,wet,tuna,adult,12 × 85 g,1.02,15.90,yes,2023-04-03
+P036,Friandises Chat Cœurs fondants poulet 60 g,cat,treat,chicken,all,60 g,0.06,5.90,no,2021-04-06
+P037,Herbe à chat à faire pousser,cat,treat,,all,1 pot,,6.90,no,2022-06-13
+P038,Pâte au malt Chat 100 g,cat,supplement,,all,100 g,,10.90,no,2023-09-04
+P039,Gamelle anti-glouton,both,accessory,,all,1 pièce,,16.90,no,2023-09-04
+P040,Boîte de conservation hermétique 12 kg,both,accessory,,all,1 pièce,,28.90,no,2024-10-07
