@@ -66,8 +66,8 @@ Jusqu'ici, vous avez utilisé l'IA dans des fenêtres : ChatGPT, NotebookLM, Mak
 
 **Partie 2 · Le plan B.** Le quota gratuit d'un agent peut s'épuiser en pleine journée. Branchez le second :
 
-1. Créez un compte sur [console.mistral.ai](https://console.mistral.ai). Le compte démarre sur l'offre Free, où les clés sont désactivées : cliquez sur **Mettre à niveau** (ou **Admin**, **Subscriptions**), choisissez **Experiment** (gratuite, sans carte bancaire), acceptez les conditions et validez votre numéro de téléphone. Ensuite seulement : **API Keys**, **Nouvelle clé**. Copiez la clé.
-2. Dans le terminal : `vibe --setup`, collez la clé.
+1. Créez un compte gratuit sur [console.mistral.ai](https://console.mistral.ai). Restez sur l'offre gratuite, ne cliquez pas sur **Mettre à niveau** : elle donne déjà accès à Vibe, avec des sessions limitées.
+2. Dans le terminal : `vibe --setup`, puis choisissez de vous connecter avec votre compte Mistral. Si on vous demande une clé, créez-la dans la console : **Code**, **Vibe CLI** (pas dans **API Keys**, réservé aux offres payantes), puis collez-la.
 3. Testez : `vibe -p "Dis bonjour en une phrase"`. Désormais, si un agent répond « quota » ou « 429 », vous lancerez la fabrique avec l'autre : `CLI=vibe ./fabrique.sh …`.
 
 **Partie 3 · Bonus**
