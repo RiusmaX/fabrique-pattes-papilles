@@ -28,9 +28,10 @@ Le dépôt reste à vous après la semaine, avec 60 heures de Codespace gratuite
 | Heure | Séquence | Ce que vous faites |
 |---|---|---|
 | 9 h 00 | L'usine | Marius vous montre une vraie usine d'agents en production |
-| 9 h 20 | TD · Mise en route | Ensemble, écran partagé : dépôt, Codespace, premier agent |
-| 9 h 45 | TP · Le terminal sans peur | Chasse au trésor dans les données, second agent en secours |
-| 10 h 10 | Atelier 1 · Votre équipe | Vos règles et vos rôles d'agents |
+| 9 h 20 | Réflexion | Quatre questions sur l'usine, 10 minutes, ensemble |
+| 9 h 30 | TD · Mise en route | Ensemble, écran partagé : dépôt, Codespace, premier agent |
+| 9 h 55 | TP · Le terminal sans peur | Chasse au trésor dans les données, second agent en secours |
+| 10 h 20 | Atelier 1 · Votre équipe | Vos règles et vos rôles d'agents |
 | 10 h 45 | Atelier 2 · L'analyste et le stratège | Diagnostic, tableau de bord, business case |
 | 11 h 45 | Atelier 3 · Toute la chaîne | Une commande, toute l'équipe, puis la pause |
 | 13 h 30 | Coup de théâtre | Le client a un message urgent |
@@ -38,7 +39,7 @@ Le dépôt reste à vous après la semaine, avec 60 heures de Codespace gratuite
 | 15 h 30 | Coaching | 15 minutes par agence, en visio |
 | 16 h 30 | Clôture | Consignes pour vendredi |
 
-## TD · La mise en route, ensemble (9 h 20 · 25 min)
+## TD · La mise en route, ensemble (9 h 30 · 25 min)
 
 Marius partage son écran, tout le monde fait la même chose en même temps. On ne passe à l'étape suivante que quand chacun a le même écran.
 
@@ -51,7 +52,7 @@ Marius partage son écran, tout le monde fait la même chose en même temps. On 
 7. **Premier contact.** `agy -p "Dis bonjour en une phrase"`. L'agent répond : votre serveur parle à l'IA.
 8. **Premier agent de l'équipe.** `./fabrique.sh plan`, puis ouvrez `chantier/plan.md` dans l'explorateur. Le chef de projet vient de lire la demande du client et de répartir le travail.
 
-## TP · Le terminal sans peur, en autonomie (9 h 45 · 25 min)
+## TP · Le terminal sans peur, en autonomie (9 h 55 · 25 min)
 
 Jusqu'ici, vous avez utilisé l'IA dans des fenêtres : ChatGPT, NotebookLM, Make. Pour qu'une équipe d'agents travaille seule, il faut descendre d'un étage, là où elle tourne vraiment : un serveur Linux, piloté depuis un terminal. Pas besoin de devenir développeur. Il suffit de douze commandes et de quatre réflexes, rassemblés dans `outils/antiseche-terminal.md`.
 
@@ -107,7 +108,7 @@ demande.md ─► chef de projet (plan)
                               chef de projet (bilan) ─► vous validez
 ```
 
-## Atelier 1 · Votre équipe d'agents (10 h 10 · 35 min)
+## Atelier 1 · Votre équipe d'agents (10 h 20 · 25 min)
 
 1. Lisez `AGENTS.md` et deux fiches de rôle au choix.
 2. Relisez `chantier/plan.md`, produit pendant le TD. Le chef de projet a-t-il bien compris la demande ? Ce qui manque se corrige dans sa fiche, pas dans le plan.
