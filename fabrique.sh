@@ -11,6 +11,7 @@
 #   MARQUE=branding/agence.md     la charte à appliquer (celle du client par défaut)
 #   REPASSES=2                    nombre maximum de corrections après un refus
 #   DEMANDE=chantier/demande.md   la demande du client à traiter
+#   MODELE=...                    le modèle à utiliser (liste : agy models), sinon celui par défaut
 
 set -uo pipefail
 cd "$(dirname "$0")"
@@ -19,6 +20,7 @@ CLI="${CLI:-agy}"
 MARQUE="${MARQUE:-branding/client-pattes-papilles.md}"
 REPASSES="${REPASSES:-2}"
 DEMANDE="${DEMANDE:-chantier/demande.md}"
+MODELE="${MODELE:-}"
 LOGS="chantier/logs"
 mkdir -p "$LOGS" chantier/livrables chantier/analyse chantier/controle
 touch chantier/journal.md
@@ -40,9 +42,9 @@ Travaille jusqu'au bout sans poser de question : si une information manque, note
   local log="$LOGS/$(date +%H%M%S)-${role}.log"
   local cmd
   case "$CLI" in
-    agy)    cmd=(agy -p "$prompt" --dangerously-skip-permissions) ;;
+    agy)    cmd=(agy -p "$prompt" --dangerously-skip-permissions ${MODELE:+--model "$MODELE"}) ;;
     vibe)   cmd=(vibe -p "$prompt" --auto-approve --trust) ;;
-    claude) cmd=(claude -p "$prompt" --dangerously-skip-permissions) ;;
+    claude) cmd=(claude -p "$prompt" --dangerously-skip-permissions ${MODELE:+--model "$MODELE"}) ;;
     *)      echo "CLI inconnu : $CLI (agy, vibe ou claude)"; exit 1 ;;
   esac
   say "▶ ${role} démarre (journal : ${log})"
@@ -95,7 +97,7 @@ if [ $# -gt 0 ]; then
   exit 0
 fi
 
-say "Fabrique lancée avec ${CLI}, charte ${MARQUE}"
+say "Fabrique lancée avec ${CLI}${MODELE:+ (${MODELE})}, charte ${MARQUE}"
 etape plan
 etape analyste
 etape stratege
