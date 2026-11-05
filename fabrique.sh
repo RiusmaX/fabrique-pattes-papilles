@@ -10,6 +10,7 @@
 #   CLI=agy | vibe | claude       l'agent en ligne de commande à utiliser (agy par défaut)
 #   MARQUE=branding/agence.md     la charte à appliquer (celle du client par défaut)
 #   REPASSES=2                    nombre maximum de corrections après un refus
+#   DEMANDE=chantier/demande.md   la demande du client à traiter
 
 set -uo pipefail
 cd "$(dirname "$0")"
@@ -17,6 +18,7 @@ cd "$(dirname "$0")"
 CLI="${CLI:-agy}"
 MARQUE="${MARQUE:-branding/client-pattes-papilles.md}"
 REPASSES="${REPASSES:-2}"
+DEMANDE="${DEMANDE:-chantier/demande.md}"
 LOGS="chantier/logs"
 mkdir -p "$LOGS" chantier/livrables chantier/analyse chantier/controle
 touch chantier/journal.md
@@ -31,7 +33,7 @@ run_agent() {
   local role="$1" fiche="$2" extra="${3:-}"
   local prompt="Tu es l'agent « ${role} » de la fabrique.
 Lis d'abord AGENTS.md, puis ta fiche de rôle ${fiche}, et suis-les strictement.
-La demande du client est dans chantier/demande.md.
+La demande du client à traiter est dans ${DEMANDE}.
 Charte à appliquer pour cette mission : ${MARQUE}.
 ${extra}
 Travaille jusqu'au bout sans poser de question : si une information manque, note-le dans chantier/journal.md et continue."
