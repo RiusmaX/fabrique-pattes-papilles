@@ -66,8 +66,8 @@ Jusqu'ici, vous avez utilisé l'IA dans des fenêtres : ChatGPT, NotebookLM, Mak
 
 **Partie 2 · Le plan B.** Le quota gratuit d'un agent peut s'épuiser en pleine journée. Branchez le second :
 
-1. Créez un compte gratuit sur [console.mistral.ai](https://console.mistral.ai). Restez sur l'offre gratuite, ne cliquez pas sur **Mettre à niveau** : elle donne déjà accès à Vibe, avec des sessions limitées.
-2. Dans la console Mistral : **Code**, **Vibe CLI**, créez une clé et copiez-la. Dans le terminal, remplacez `VOTRE_CLE` par la clé (clic droit, **Coller**) :
+1. Créez un compte gratuit sur [chat.mistral.ai](https://chat.mistral.ai). Restez sur l'offre gratuite, ne cliquez pas sur **Mettre à niveau** : elle donne déjà accès à Vibe, avec des sessions limitées.
+2. Ouvrez [chat.mistral.ai/code/extensions](https://chat.mistral.ai/code/extensions) (pas la console Studio, dont les clés sont réservées aux offres payantes), créez une clé **Vibe CLI** et copiez-la. Dans le terminal, remplacez `VOTRE_CLE` par la clé (clic droit, **Coller**) :
    ```
    mkdir -p ~/.vibe && echo "MISTRAL_API_KEY=VOTRE_CLE" >> ~/.vibe/.env
    ```
