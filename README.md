@@ -95,3 +95,4 @@ Le matin, la fabrique a travaillé aux couleurs du client. L'après-midi, elle p
 - On corrige les règles (`AGENTS.md`, fiches de rôle), pas les livrables à la main. C'est ce qui rend la fabrique réutilisable.
 - Un chiffre qui ne vient pas de `donnees/` n'existe pas.
 - Commitez souvent : si un agent casse quelque chose, on revient en arrière.
+- La fabrique lance les agents sans leur demander la permission avant chaque commande : c'est ce qui les rend autonomes, et c'est aussi un risque. Un fichier piégé dans `donnees/` ou `corpus/` pourrait leur faire exécuter n'importe quoi. Faites-la tourner uniquement dans le Codespace, jamais sur votre ordinateur, et n'y mettez ni mot de passe ni clé autre que celle de l'agent.
