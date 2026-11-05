@@ -10,6 +10,34 @@ C'est une version miniature de l'usine que Marius vous a montrée ce matin :
 
 Votre fabrique en reprend les pièces : `AGENTS.md` pour les règles de l'usine, `agents/` pour les rôles, `chantier/` pour le dossier de chantier. Et vous êtes la barre orange, la validation humaine.
 
+## Pourquoi cette journée
+
+La grève vide la salle, alors on fait ce qu'on ne pourrait pas faire à trente : monter une vraie équipe d'agents IA, sur un vrai serveur. La journée est plus technique que les autres, mais elle est accompagnée pas à pas, et tout ce qu'elle produit sert le dossier et l'oral de vendredi.
+
+Ce que vous y gagnez :
+
+- **Pendant vos études** : une équipe d'agents réutilisable pour vos dossiers, votre mémoire, une étude de marché. On change les données, la demande et la charte, on relance.
+- **En stage et en entretien** : un dépôt GitHub qui montre ce que vous savez faire, pas seulement ce que vous dites savoir faire.
+- **Dans votre futur poste** : les agents ne remplacent pas le chef de projet, le stratège ou le responsable marketing. Ils déplacent leur travail vers le brief, le contrôle et la décision. C'est exactement ce que vous pratiquez aujourd'hui.
+- **Votre différence** : un profil business qui ouvre un terminal, lit le journal d'un agent et écrit les règles d'une équipe d'IA, c'est encore rare.
+
+Le dépôt reste à vous après la semaine, avec 60 heures de Codespace gratuites par mois sur un compte personnel.
+
+## Le déroulé
+
+| Heure | Séquence | Ce que vous faites |
+|---|---|---|
+| 9 h 00 | L'usine | Marius vous montre une vraie usine d'agents en production |
+| 9 h 20 | TD · Mise en route | Ensemble, écran partagé : dépôt, Codespace, premier agent |
+| 9 h 45 | TP · Le terminal sans peur | Chasse au trésor dans les données, second agent en secours |
+| 10 h 10 | Atelier 1 · Votre équipe | Vos règles et vos rôles d'agents |
+| 10 h 45 | Atelier 2 · L'analyste et le stratège | Diagnostic, tableau de bord, business case |
+| 11 h 45 | Atelier 3 · Toute la chaîne | Une commande, toute l'équipe, puis la pause |
+| 13 h 30 | Coup de théâtre | Le client a un message urgent |
+| 14 h 15 | Atelier 4 · Votre marque | Dossier et présentation aux couleurs de votre agence |
+| 15 h 30 | Coaching | 15 minutes par agence, en visio |
+| 16 h 30 | Clôture | Consignes pour vendredi |
+
 ## TD · La mise en route, ensemble (9 h 20 · 25 min)
 
 Marius partage son écran, tout le monde fait la même chose en même temps. On ne passe à l'étape suivante que quand chacun a le même écran.
