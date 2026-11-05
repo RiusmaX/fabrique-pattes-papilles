@@ -6,23 +6,43 @@ Aujourd'hui, votre agence ne travaille pas seule : elle pilote une équipe de se
 
 C'est une version miniature de l'usine que Marius vous a montrée ce matin.
 
-## Démarrer (9 h 20 · 15 minutes)
+## TD · La mise en route, ensemble (9 h 20 · 25 min)
 
-1. Connectez-vous à GitHub (créez un compte gratuit si besoin).
-2. Sur cette page, bouton vert **Use this template**, puis **Open in a codespace**. Une équipe = un dépôt, chaque membre ouvre son propre Codespace sur le dépôt de l'équipe.
-3. Attendez la fin de l'installation (2 à 3 minutes), puis ouvrez un terminal : menu ☰, **Terminal**, **New Terminal**.
-4. Branchez **un** des deux agents :
+Marius partage son écran, tout le monde fait la même chose en même temps. On ne passe à l'étape suivante que quand chacun a le même écran.
 
-| Agent | Connexion | Compte |
-|---|---|---|
-| **Antigravity CLI** (Google) | tapez `agy`, suivez le lien affiché, connectez-vous, puis `/quit` | compte Google gratuit |
-| **Mistral Vibe** | créez une clé sur [console.mistral.ai](https://console.mistral.ai) (offre Experiment, gratuite), puis `vibe --setup` | compte Mistral gratuit |
+1. **Le compte.** Connectez-vous à GitHub, ou créez un compte gratuit.
+2. **Le dépôt de l'équipe.** Une seule personne par équipe clique sur le bouton vert **Use this template**, puis **Create a new repository** (nommez-le comme votre agence). Elle invite ses coéquipiers : **Settings**, **Collaborators**, **Add people**.
+3. **Le serveur.** Chacun, sur le dépôt de l'équipe : bouton vert **Code**, onglet **Codespaces**, **Create codespace on main**. Pendant les 2 à 3 minutes d'installation, GitHub vous prépare un petit serveur Linux rien que pour vous.
+4. **La visite.** À gauche l'explorateur de fichiers, au centre l'éditeur, en bas le terminal (s'il n'apparaît pas : menu ☰, **Terminal**, **New Terminal**).
+5. **Les trois premières commandes**, tapées ensemble : `pwd` (où suis-je ?), `ls` (qu'y a-t-il ici ?), `cat AGENTS.md` (lire un fichier).
+6. **Brancher l'agent.** Tapez `agy`, ouvrez le lien affiché, connectez-vous avec votre compte Google, revenez au terminal, puis `/quit`.
+7. **Premier contact.** `agy -p "Dis bonjour en une phrase"`. L'agent répond : votre serveur parle à l'IA.
+8. **Premier agent de l'équipe.** `./fabrique.sh plan`, puis ouvrez `chantier/plan.md` dans l'explorateur. Le chef de projet vient de lire la demande du client et de répartir le travail.
 
-5. Vérifiez : `agy -p "Dis bonjour en une phrase"` ou `vibe -p "Dis bonjour en une phrase"`.
+## TP · Le terminal sans peur, en autonomie (9 h 45 · 25 min)
 
-Vous préférez le terminal de votre propre ordinateur ? C'est possible en SSH, voir la fin de `outils/antiseche-terminal.md`.
+Jusqu'ici, vous avez utilisé l'IA dans des fenêtres : ChatGPT, NotebookLM, Make. Pour qu'une équipe d'agents travaille seule, il faut descendre d'un étage, là où elle tourne vraiment : un serveur Linux, piloté depuis un terminal. Pas besoin de devenir développeur. Il suffit de douze commandes et de quatre réflexes, rassemblés dans `outils/antiseche-terminal.md`.
 
-Le quota gratuit est limité : si un agent répond « quota » ou « 429 », passez à l'autre (`CLI=vibe ./fabrique.sh …`).
+**Partie 1 · Chasse au trésor**, dans le terminal, sans l'aide d'aucune IA :
+
+1. Qu'y a-t-il dans le dépôt ? (`tree -L 1`)
+2. Combien de clients compte `donnees/customers.csv` ? Attention, la première ligne est l'en-tête.
+3. Affichez les 5 premières lignes de `donnees/abonnes_support.csv`. Comment s'appelle le chien de Damien ?
+4. Combien de produits contiennent du saumon ? (`grep -i saumon donnees/products.csv`, puis ajoutez ` | wc -l`)
+5. Ouvrez `AGENTS.md` avec `nano`, ajoutez votre prénom en dernière ligne, enregistrez, sortez. Vérifiez avec `tail -3 AGENTS.md`.
+
+**Partie 2 · Le plan B.** Le quota gratuit d'un agent peut s'épuiser en pleine journée. Branchez le second :
+
+1. Créez un compte sur [console.mistral.ai](https://console.mistral.ai), choisissez l'offre **Experiment** (gratuite), puis **API Keys**, **Create new key**. Copiez la clé.
+2. Dans le terminal : `vibe --setup`, collez la clé.
+3. Testez : `vibe -p "Dis bonjour en une phrase"`. Désormais, si un agent répond « quota » ou « 429 », vous lancerez la fabrique avec l'autre : `CLI=vibe ./fabrique.sh …`.
+
+**Partie 3 · Bonus**
+
+- Ouvrez une session `tmux`, détachez-vous, revenez (voir l'antisèche). Vous venez de faire ce que fait une usine d'agents toute la journée.
+- Entrez dans votre Codespace en SSH depuis le terminal de votre propre ordinateur (fin de l'antisèche).
+
+**Livrable** : les quatre réponses de la chasse au trésor et le « bonjour » de Vibe, dans le chat de l'équipe.
 
 ## Ce qu'il y a dans le dépôt
 
@@ -55,31 +75,16 @@ demande.md ─► chef de projet (plan)
                               chef de projet (bilan) ─► vous validez
 ```
 
-## Atelier 0 · Le terminal sans peur (9 h 35 · 30 min)
-
-Jusqu'ici, vous avez utilisé l'IA dans des fenêtres : ChatGPT, NotebookLM, Make. Pour qu'une équipe d'agents travaille seule, il faut descendre d'un étage, là où elle tourne vraiment : un serveur Linux, piloté depuis un terminal. Pas besoin de devenir développeur. Il suffit de douze commandes et de quatre réflexes, rassemblés dans `outils/antiseche-terminal.md`.
-
-Chasse au trésor, à faire dans le terminal sans l'aide d'aucune IA :
-
-1. Où êtes-vous ? (`pwd`) Qu'y a-t-il autour de vous ? (`ls`, puis `tree -L 1`)
-2. Combien de clients compte `donnees/customers.csv` ? Attention, la première ligne est l'en-tête.
-3. Affichez les 5 premières lignes de `donnees/abonnes_support.csv`. Comment s'appelle le chien de Damien ?
-4. Combien de produits contiennent du saumon ? (`grep -i saumon donnees/products.csv`, puis ajoutez ` | wc -l`)
-5. Ouvrez `AGENTS.md` avec `nano`, ajoutez votre prénom en dernière ligne, enregistrez, sortez. Vérifiez avec `tail -3 AGENTS.md`.
-6. Bonus : ouvrez une session `tmux`, détachez-vous, revenez. Vous venez de faire ce que fait une usine d'agents toute la journée.
-
-**Livrable** : les quatre réponses, dans le chat de l'équipe.
-
-## Atelier 1 · Votre équipe d'agents (10 h 05 · 35 min)
+## Atelier 1 · Votre équipe d'agents (10 h 10 · 35 min)
 
 1. Lisez `AGENTS.md` et deux fiches de rôle au choix.
-2. Lancez un seul agent pour voir comment il travaille : `./fabrique.sh plan`. Ouvrez `chantier/plan.md`.
+2. Relisez `chantier/plan.md`, produit pendant le TD. Le chef de projet a-t-il bien compris la demande ? Ce qui manque se corrige dans sa fiche, pas dans le plan.
 3. Adaptez l'usine à votre agence : ajoutez dans `AGENTS.md` trois règles tirées de la bataille des supports d'hier (ce qui a fait céder votre agent, ce qui l'a protégé).
 4. Ajoutez ou modifiez un rôle. Exemples : un agent « juriste » qui vérifie le RGPD des messages, un agent « veille » qui lit les avis clients, un agent « avocat du diable » qui attaque le business case.
 
 **Livrable** : votre `AGENTS.md` et vos fiches de rôle, commités (onglet Source Control, message, Commit, Sync).
 
-## Atelier 2 · L'analyste et le stratège (10 h 40 · 1 h)
+## Atelier 2 · L'analyste et le stratège (10 h 45 · 1 h)
 
 1. `./fabrique.sh analyste` : l'agent écrit et exécute du Python sur vos données. Suivez son travail dans un second terminal : `tail -f chantier/logs/*analyste.log`.
 2. Ouvrez le tableau de bord : `./outils/voir.sh`, onglet **Ports**, globe à côté du port 8000, puis `livrables/tableau-de-bord.html`.
@@ -88,7 +93,7 @@ Chasse au trésor, à faire dans le terminal sans l'aide d'aucune IA :
 
 **Livrable** : un tableau de bord dont vous avez vérifié trois chiffres à la main.
 
-## Atelier 3 · Toute la chaîne (11 h 40 · 45 min)
+## Atelier 3 · Toute la chaîne (11 h 45 · 45 min)
 
 1. Ouvrez une session qui survivra à la pause : `tmux new -s fabrique`, puis `./fabrique.sh` lance toute l'équipe, du plan au bilan. `Ctrl+B` puis `D` pour vous détacher, `tmux attach -t fabrique` pour revenir.
 2. Pendant qu'elle tourne, regardez `chantier/journal.md` se remplir.
