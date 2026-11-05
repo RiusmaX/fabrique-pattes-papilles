@@ -4,7 +4,11 @@ AI Week · jeudi 5 novembre 2026 · à distance
 
 Aujourd'hui, votre agence ne travaille pas seule : elle pilote une équipe de sept agents IA. Chacun a un rôle écrit dans un fichier, tous partagent un dossier de chantier, deux d'entre eux peuvent bloquer la livraison. À la fin de la journée, une seule commande reconstruit tout votre livrable : diagnostic, tableau de bord, messages aux abonnés, business case, dossier et présentation.
 
-C'est une version miniature de l'usine que Marius vous a montrée ce matin.
+C'est une version miniature de l'usine que Marius vous a montrée ce matin :
+
+![L'usine d'agents de Marius : entrées, pilotage, production, sorties, et le socle commun](outils/usine-schema.png)
+
+Votre fabrique en reprend les pièces : `AGENTS.md` pour les règles de l'usine, `agents/` pour les rôles, `chantier/` pour le dossier de chantier. Et vous êtes la barre orange, la validation humaine.
 
 ## TD · La mise en route, ensemble (9 h 20 · 25 min)
 
