@@ -31,7 +31,7 @@ Un terminal, c'est une conversation écrite avec un ordinateur. Vous tapez une c
 | `tail -f` | Suivre un fichier qui se remplit en direct (Ctrl+C pour arrêter) | `tail -f chantier/journal.md` |
 | `./fabrique.sh` | Lancer votre équipe d'agents | `./fabrique.sh analyste` |
 
-## Les quatre réflexes
+## Les cinq réflexes
 
 - **Un lien dans le terminal** : Ctrl+clic (Cmd+clic sur Mac) l'ouvre directement, pas besoin de le copier. Copier : sélectionnez puis clic droit, **Copier** (Ctrl+C arrête le programme). Si la sélection ne prend pas, maintenez Maj (Option sur Mac) en glissant.
 - **Tab** complète les noms de fichiers. Tapez `cat AG` puis Tab.
