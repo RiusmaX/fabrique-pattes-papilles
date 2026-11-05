@@ -4,11 +4,29 @@
   "postCreateCommand": "bash .devcontainer/setup.sh",
   "customizations": {
     "vscode": {
-      "extensions": ["ms-python.python", "ritwickdey.LiveServer"],
-      "settings": { "workbench.startupEditor": "readme" }
+      "extensions": [
+        "ms-python.python",
+        "ritwickdey.LiveServer"
+      ],
+      "settings": {
+        "workbench.startupEditor": "readme"
+      }
     },
-    "codespaces": { "openFiles": ["README.md"] }
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    }
   },
-  "forwardPorts": [8000],
-  "portsAttributes": { "8000": { "label": "Livrables" } }
+  "forwardPorts": [
+    8000
+  ],
+  "portsAttributes": {
+    "8000": {
+      "label": "Livrables"
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {}
+  }
 }

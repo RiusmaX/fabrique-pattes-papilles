@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Installe tout ce qu'il faut à la création du Codespace
 set -e
+sudo apt-get update -qq && sudo apt-get install -y -qq tmux tree nano >/dev/null
 pip install --quiet -r requirements.txt
 # Antigravity CLI (Google), gratuit avec un compte Google
 curl -fsSL https://antigravity.google/cli/install.sh | bash || echo "Installation d'agy à refaire à la main"
