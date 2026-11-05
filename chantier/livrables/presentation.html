@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan anti-churn · Pattes &amp; Papilles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sapin: #1E4636;
+    --terracotta: #D9734E;
+    --creme: #FBF5EC;
+    --moutarde: #E8B04B;
+    --gris: #6b6b63;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: var(--creme); overflow: hidden; }
+  body { font-family: 'Inter', system-ui, sans-serif; font-weight: 400; color: var(--sapin); }
+  h1, h2, .marque { font-family: 'Fraunces', Georgia, serif; font-weight: 700; color: var(--sapin); }
+
+  .slide {
+    position: absolute; inset: 0;
+    display: none; flex-direction: column; justify-content: center;
+    padding: clamp(24px, 6vh, 64px) clamp(28px, 7vw, 110px) clamp(56px, 9vh, 90px);
+    background: var(--creme);
+  }
+  .slide.actif { display: flex; }
+  .slide::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 10px; background: var(--moutarde);
+  }
+
+  h2 { font-size: clamp(1.5rem, 4.2vh + 1vw, 2.8rem); line-height: 1.15; max-width: 22ch; margin-bottom: clamp(12px, 3vh, 28px); }
+  .large h2 { max-width: 30ch; }
+  p { font-size: clamp(1rem, 2.4vh + 0.4vw, 1.5rem); line-height: 1.4; max-width: 46ch; }
+  .note { color: var(--gris); font-size: clamp(0.85rem, 1.9vh + 0.3vw, 1.2rem); margin-top: clamp(10px, 2vh, 20px); }
+
+  .graphique { display: block; width: 100%; max-height: 60vh; object-fit: contain; object-position: left center; border-radius: 6px; }
+
+  /* titre */
+  .titre { background: var(--sapin); }
+  .titre::before { background: var(--terracotta); }
+  .titre h1 { color: var(--creme); font-size: clamp(2rem, 6.5vh + 1.2vw, 4rem); line-height: 1.1; max-width: 18ch; margin: 3vh 0; }
+  .titre .marque { color: var(--moutarde); font-size: clamp(1.2rem, 3vh + 0.5vw, 1.9rem); }
+  .titre p { color: var(--creme); }
+  .titre .signature { color: var(--moutarde); margin-top: 6vh; font-style: italic; }
+
+  /* chiffres */
+  .duo { display: flex; gap: clamp(20px, 5vw, 70px); margin: 2vh 0; flex-wrap: wrap; }
+  .chiffre { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: clamp(3rem, 14vh + 2vw, 7rem); line-height: 1; color: var(--terracotta); }
+  .chiffre.calme { color: var(--sapin); }
+  .legende { font-size: clamp(0.95rem, 2.2vh + 0.3vw, 1.4rem); margin-top: 6px; max-width: 18ch; }
+
+  /* colonnes */
+  .cols { display: flex; gap: clamp(16px, 3vw, 44px); margin-top: 1vh; }
+  .col { flex: 1; background: #fff; border-top: 6px solid var(--moutarde); border-radius: 6px; padding: clamp(14px, 3vh, 28px); box-shadow: 0 1px 4px rgba(30,70,54,.12); }
+  .col.terre { border-top-color: var(--terracotta); }
+  .col h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: clamp(1.1rem, 3vh + 0.3vw, 1.7rem); margin-bottom: 1.2vh; }
+  .col p { font-size: clamp(0.95rem, 2.2vh + 0.3vw, 1.35rem); }
+  .col .gros { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: clamp(1.6rem, 6vh + 0.6vw, 3rem); color: var(--terracotta); line-height: 1.1; margin: 0.5vh 0; }
+  .col .gros.sapin { color: var(--sapin); }
+
+  /* barre de navigation */
+  nav {
+    position: fixed; left: 0; right: 0; bottom: 0; height: clamp(40px, 6vh, 56px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(20px, 5vw, 60px); z-index: 10;
+    font-size: 0.9rem; color: var(--gris);
+  }
+  nav .marque { font-size: 1rem; color: var(--sapin); }
+  nav .titre-actif ~ * { }
+  .sur-sombre nav { color: var(--creme); }
+  nav button { background: var(--sapin); color: var(--creme); border: 0; border-radius: 4px; width: 36px; height: 30px; font-size: 1rem; cursor: pointer; margin-left: 6px; }
+  nav button:hover { background: var(--terracotta); }
+  nav button:focus-visible { outline: 3px solid var(--moutarde); outline-offset: 2px; }
+
+  @media (max-width: 760px) {
+    .cols { flex-direction: column; }
+    .graphique { max-height: 40vh; }
+  }
+  @media (max-height: 640px) {
+    .graphique { max-height: 50vh; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <!-- 1 -->
+  <section class="slide titre" aria-label="Diapositive 1">
+    <span class="marque">Pattes &amp; Papilles</span>
+    <h1>Plan anti-churn : qui part, pourquoi, et quoi faire</h1>
+    <p>Comité de direction, novembre 2026</p>
+    <p class="signature">Bien nourris, bien dans leurs pattes.</p>
+  </section>
+
+  <!-- 2 -->
+  <section class="slide large" aria-label="Diapositive 2">
+    <h2>15,2 % des abonnés ont résilié en trois mois</h2>
+    <img class="graphique" src="assets/01-churn-plan-et-mois.png" alt="Churn sur trois mois : 15 % chez les abonnés, 64 % chez les achats ponctuels sans commande, et courbe par mois de dernière commande.">
+    <p class="note">197 abonnés sur 1 293. Échantillon de 1 984 clients, pas les 18 000 actifs.</p>
+  </section>
+
+  <!-- 3 -->
+  <section class="slide large" aria-label="Diapositive 3">
+    <h2>Les chats partent deux fois plus que les chiens</h2>
+    <img class="graphique" src="assets/03-churn-profil.png" alt="Churn des abonnés : 10 % pour les chiens, 24 % pour les chats, 32 % pour les chats ayant pris du saumon depuis le 4 mai contre 14 % sans saumon.">
+    <p class="note">Chats : 23,7 %, chiens : 10,2 %. Le saumon n'est pas prouvé comme cause.</p>
+  </section>
+
+  <!-- 4 -->
+  <section class="slide large" aria-label="Diapositive 4">
+    <h2>Chez les abonnés, l'animal qui refuse passe avant le prix</h2>
+    <img class="graphique" src="assets/05-motifs.png" alt="Motifs de départ : animal refuse 59 sur 166 chez les abonnés, prix 117 sur 356 chez les achats ponctuels.">
+    <p class="note">Abonnés : 59 motifs sur 166, 25 pour le prix, 31 sans motif. Ponctuels : prix, 117 sur 356.</p>
+  </section>
+
+  <!-- 5 -->
+  <section class="slide large" aria-label="Diapositive 5">
+    <h2>Les livraisons décalées précèdent les départs</h2>
+    <img class="graphique" src="assets/04-signaux.png" alt="Churn des abonnés selon livraisons décalées, colis en retard, tickets et note du dernier avis.">
+    <p class="note">20,0 % contre 13,7 % sans décalage. Deux décalages : 18 clients seulement.</p>
+  </section>
+
+  <!-- 6 -->
+  <section class="slide" aria-label="Diapositive 6">
+    <h2>Les nouveaux abonnés partent presque deux fois plus</h2>
+    <div class="duo">
+      <div><div class="chiffre">26,1 %</div><div class="legende">inscrits depuis le 1er mars 2026 (29 sur 111)</div></div>
+      <div><div class="chiffre calme">14,2 %</div><div class="legende">inscrits avant (168 sur 1 182)</div></div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="slide" aria-label="Diapositive 7">
+    <h2>Les achats ponctuels se traitent à part</h2>
+    <div class="duo">
+      <div><div class="chiffre calme">64,1 %</div><div class="legende">sans commande sur la période (443 sur 691)</div></div>
+      <div><div class="chiffre">93,1 %</div><div class="legende">après un colis en retard, contre 59,9 %</div></div>
+    </div>
+    <p class="note">Aucune résiliation ici.</p>
+  </section>
+
+  <!-- 8 -->
+  <section class="slide" aria-label="Diapositive 8">
+    <h2>On relit d'abord, on mesure l'effet ensuite</h2>
+    <div class="cols">
+      <div class="col"><h3>Semaine 1</h3><p>Relire les 20 messages, trancher les gestes.</p></div>
+      <div class="col"><h3>Premier mois</h3><p>Envoyer, contacter après chaque décalage.</p></div>
+      <div class="col terre"><h3>Premier trimestre</h3><p>Mesurer avec un groupe témoin.</p></div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="slide" aria-label="Diapositive 9">
+    <h2>Le plan couvre ses coûts, de justesse en prudent</h2>
+    <div class="cols">
+      <div class="col"><h3>10 % évités</h3><div class="gros sapin">+895 €</div><p>Gain 6 935 €</p></div>
+      <div class="col terre"><h3>20 % évités</h3><div class="gros">+7 830 €</div><p>Gain 13 870 €</p></div>
+    </div>
+    <p class="note">Coûts 6 040 €. Gains en CA, plafond.</p>
+  </section>
+
+  <!-- 10 -->
+  <section class="slide" aria-label="Diapositive 10">
+    <h2>Ce que l'IA a fait, ce qu'il reste à faire valider</h2>
+    <div class="cols">
+      <div class="col"><h3>L'IA a fait</h3><p>Nettoyage, calculs, graphiques, 20 messages.</p></div>
+      <div class="col terre"><h3>À valider par vous</h3><p>Budget, coûts, gestes commerciaux, relecture des messages.</p></div>
+    </div>
+  </section>
+</main>
+
+<nav>
+  <span class="marque">Pattes &amp; Papilles</span>
+  <span>
+    <span id="compteur">1 / 10</span>
+    <button id="prec" aria-label="Diapositive précédente">&larr;</button><button id="suiv" aria-label="Diapositive suivante">&rarr;</button>
+  </span>
+</nav>
+
+<script>
+  (function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var compteur = document.getElementById('compteur');
+    var i = 0;
+    function aller(n) {
+      i = Math.max(0, Math.min(slides.length - 1, n));
+      slides.forEach(function (s, k) { s.classList.toggle('actif', k === i); });
+      compteur.textContent = (i + 1) + ' / ' + slides.length;
+      document.body.classList.toggle('sur-sombre', i === 0);
+      history.replaceState(null, '', '#' + (i + 1));
+    }
+    document.addEventListener('keydown', function (e) {
+      if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].indexOf(e.key) > -1) { e.preventDefault(); aller(i + 1); }
+      else if (['ArrowLeft', 'ArrowUp', 'PageUp'].indexOf(e.key) > -1) { e.preventDefault(); aller(i - 1); }
+      else if (e.key === 'Home') { aller(0); }
+      else if (e.key === 'End') { aller(slides.length - 1); }
+    });
+    document.getElementById('prec').addEventListener('click', function () { aller(i - 1); });
+    document.getElementById('suiv').addEventListener('click', function () { aller(i + 1); });
+    var depart = parseInt(location.hash.slice(1), 10);
+    aller(isNaN(depart) ? 0 : depart - 1);
+  })();
+</script>
+</body>
+</html>
