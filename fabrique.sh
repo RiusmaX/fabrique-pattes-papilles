@@ -48,7 +48,12 @@ Travaille jusqu'au bout sans poser de question : si une information manque, note
     *)      echo "CLI inconnu : $CLI (agy, vibe ou claude)"; exit 1 ;;
   esac
   say "▶ ${role} démarre (journal : ${log})"
-  "${cmd[@]}" >"$log" 2>&1 &
+  # agy n'écrit rien (et peut rester bloqué) sans vrai terminal : script lui en simule un
+  if command -v script >/dev/null; then
+    script -qefc "$(printf '%q ' "${cmd[@]}")" "$log" </dev/null >/dev/null 2>&1 &
+  else
+    "${cmd[@]}" >"$log" 2>&1 </dev/null &
+  fi
   local pid=$! start=$SECONDS quiet=0
   # Suivi en direct : l'agent n'affiche rien avant la fin, alors on montre les fichiers qu'il écrit
   local mark="$LOGS/.mark-${role}" next="$LOGS/.next-${role}"
@@ -70,7 +75,7 @@ Travaille jusqu'au bout sans poser de question : si une information manque, note
   wait "$pid"
   local code=$?
   rm -f "$mark"
-  tail -n 4 "$log" | sed "s/^/   ${role} · /"
+  grep -v -e '^Script ' -e '^[[:space:]]*$' "$log" | tail -n 4 | sed "s/^/   ${role} · /"
   if [ $code -eq 0 ]; then say "✔ ${role} a terminé"; else say "✖ ${role} s'est arrêté (code ${code}), voir ${log}"; fi
   return $code
 }
