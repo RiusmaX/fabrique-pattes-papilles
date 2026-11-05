@@ -38,14 +38,37 @@ Charte à appliquer pour cette mission : ${MARQUE}.
 ${extra}
 Travaille jusqu'au bout sans poser de question : si une information manque, note-le dans chantier/journal.md et continue."
   local log="$LOGS/$(date +%H%M%S)-${role}.log"
-  say "▶ ${role} démarre (journal : ${log})"
+  local cmd
   case "$CLI" in
-    agy)    agy -p "$prompt" --dangerously-skip-permissions >"$log" 2>&1 ;;
-    vibe)   vibe -p "$prompt" --auto-approve --trust >"$log" 2>&1 ;;
-    claude) claude -p "$prompt" --dangerously-skip-permissions >"$log" 2>&1 ;;
+    agy)    cmd=(agy -p "$prompt" --dangerously-skip-permissions) ;;
+    vibe)   cmd=(vibe -p "$prompt" --auto-approve --trust) ;;
+    claude) cmd=(claude -p "$prompt" --dangerously-skip-permissions) ;;
     *)      echo "CLI inconnu : $CLI (agy, vibe ou claude)"; exit 1 ;;
   esac
+  say "▶ ${role} démarre (journal : ${log})"
+  "${cmd[@]}" >"$log" 2>&1 &
+  local pid=$! start=$SECONDS quiet=0
+  # Suivi en direct : l'agent n'affiche rien avant la fin, alors on montre les fichiers qu'il écrit
+  local mark="$LOGS/.mark-${role}" next="$LOGS/.next-${role}"
+  touch "$mark"
+  while kill -0 "$pid" 2>/dev/null; do
+    sleep 10
+    touch "$next"
+    local new
+    new=$(find chantier -type f -newer "$mark" ! -path "chantier/logs/*" 2>/dev/null)
+    mv "$next" "$mark"
+    if [ -n "$new" ]; then
+      quiet=0
+      while read -r f; do echo "   ${role} · écrit ${f}"; done <<<"$new"
+    else
+      quiet=$((quiet + 10))
+      [ $((quiet % 60)) -eq 0 ] && echo "   ${role} · réfléchit depuis $(( (SECONDS - start) / 60 )) min"
+    fi
+  done
+  wait "$pid"
   local code=$?
+  rm -f "$mark"
+  tail -n 4 "$log" | sed "s/^/   ${role} · /"
   if [ $code -eq 0 ]; then say "✔ ${role} a terminé"; else say "✖ ${role} s'est arrêté (code ${code}), voir ${log}"; fi
   return $code
 }
