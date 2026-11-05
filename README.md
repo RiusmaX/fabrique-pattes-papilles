@@ -124,10 +124,10 @@ demande.md ─► chef de projet (plan)
 
 1. `./fabrique.sh analyste` : l'agent écrit et exécute du Python sur vos données. Suivez son travail dans un second terminal : `tail -f chantier/logs/*analyste.log`.
 2. Ouvrez le tableau de bord : `./outils/voir.sh`, onglet **Ports**, globe à côté du port 8000, puis `livrables/tableau-de-bord.html`.
-3. Vérifiez un chiffre vous-mêmes, dans `chantier/analyse/chiffres.md` puis dans les données. Faux ? Corrigez la fiche `agents/analyste.md`, pas le résultat, et relancez.
+3. Jugez son travail comme un chef d'équipe : `chantier/analyse/chiffres.md` donne-t-il la source de chaque chiffre, a-t-il retiré les doublons, sépare-t-il abonnés et achats ponctuels ? Un défaut devient une règle dans `agents/analyste.md`, pas une retouche du résultat. Relancez l'analyste et comparez.
 4. `./fabrique.sh stratege` : segments, plan d'action, business case, recommandation par abonné.
 
-**Livrable** : un tableau de bord dont vous avez vérifié trois chiffres à la main.
+**Livrable** : le tableau de bord, et une règle ajoutée à la fiche de l'analyste ou du stratège, avec ce qu'elle a changé à la relance.
 
 ## Atelier 3 · Toute la chaîne (11 h 45 · 45 min)
 
